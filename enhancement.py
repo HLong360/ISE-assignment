@@ -57,21 +57,21 @@ def split_channels_and_combine(image):
     return combined_image
 
 # Load an image
-original_image = cv2.imread("Kheops-Pyramid.jpg")
+original_image = cv2.imread("img/Eiffel Tower/eiffel-tower-4.jpg")
 
 # Adjust brightness and contrast
 adjusted_image = adjust_brightness_contrast(original_image)
-cv2.imwrite("img0.jpg", adjusted_image)
+cv2.imwrite("result/img0.jpg", adjusted_image)
 
 # Add shadow effect
 image_with_shadow = add_shadow(original_image, intensity=0.5)
-cv2.imwrite("img3.jpg", image_with_shadow)
+cv2.imwrite("result/img3.jpg", image_with_shadow)
 
 image_sat = adjust_saturation(original_image)
-cv2.imwrite("img1.jpg", image_sat)
+cv2.imwrite("result/img1.jpg", image_sat)
 
 # Split channels, apply effects, and combine
-combined_channels_image = split_channels_and_combine(original_image)
+# combined_channels_image = split_channels_and_combine(original_image)
 
 # Display the results
 # cv2.imshow("Original Image", original_image)

@@ -3,7 +3,7 @@
 import cv2 as cv
 import numpy as np
 # Loading exposure images into a list
-img_fn = ["img0.jpg", "img1.jpg", "Kheops-Pyramid.jpg", "img3.jpg"]
+img_fn = ["result/img0.jpg", "result/img1.jpg", "img/Eiffel Tower/eiffel-tower-4.jpg", "result/img3.jpg"]
 img_list = [cv.imread(fn) for fn in img_fn]
 exposure_times = np.array([15.0, 2.5, 0.25, 0.0333], dtype=np.float32)
 
@@ -25,6 +25,6 @@ res_mertens = merge_mertens.process(img_list)
 res_debevec_8bit = np.clip(res_debevec*255, 0, 255).astype('uint8')
 # res_robertson_8bit = np.clip(res_robertson*255, 0, 255).astype('uint8')
 res_mertens_8bit = np.clip(res_mertens*255, 0, 255).astype('uint8')
-cv.imwrite("ldr_debevec.jpg", res_debevec_8bit)
+cv.imwrite("result/ldr_debevec.jpg", res_debevec_8bit)
 # cv.imwrite("ldr_robertson.jpg", res_robertson_8bit)
-cv.imwrite("fusion_mertens.jpg", res_mertens_8bit)
+cv.imwrite("result/fusion_mertens.jpg", res_mertens_8bit)
