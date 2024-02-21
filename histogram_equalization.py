@@ -14,11 +14,13 @@ def histogram_equalization(image):
     equalized_image = cv2.merge((b_equalized, g_equalized, r_equalized))
     
     # Display the original and equalized images
-    cv2.imshow('Original Image', image)
+    # cv2.imshow('Original Image', image)
     cv2.imshow('Equalized Image', equalized_image)
+
+    cv2.imwrite('result/hist.jpg', equalized_image)
     
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-image = cv2.imread('Kheops-Pyramid.jpg') 
+image = cv2.imread('img/Eiffel Tower/eiffel-tower-2.jpg') 
 histogram_equalization(image)
