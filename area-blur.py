@@ -7,14 +7,16 @@ def cropping(image, cor):
     return cropped_image
 
 def blur(image):
-    blurred_image = image.filter(ImageFilter.GaussianBlur(radius=2))
+    blurred_image = image.filter(ImageFilter.GaussianBlur(radius=1.5))
     return blurred_image
 
-# image.paste(blurred_image, (1,819,1579,969))
 
-image = Image.open('img/Machu Picchu/machu-1.png')
+image = Image.open('result/smoke-scene.png')
 smoke = Image.open('result/brighten.png')
-image.paste(smoke,(0,177,1200,840), mask=smoke)
-image.save('result/smoke-scene.png')
+image.paste(smoke,(0,0,1200,663), mask=smoke)
+# image.show()
 
+blurred = blur(image)
+# blurred.show()
 
+blurred.save('result/blur.jpg')
