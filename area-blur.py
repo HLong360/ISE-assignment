@@ -11,12 +11,12 @@ def blur(image):
     return blurred_image
 
 
-image = Image.open('result/smoke-scene.png')
-smoke = Image.open('result/brighten.png')
-image.paste(smoke,(0,0,1200,663), mask=smoke)
-# image.show()
+image = Image.open('result/cartoon.jpg')
+portal = Image.open('img/portal.png')
+image.paste(portal, (845,361,1606,1707))
 
-blurred = blur(image)
-# blurred.show()
+smoke = Image.open('result/brighten-1.png') 
+image.paste(smoke, (0,293,2560,1707), mask=smoke)
+image.show()
 
-blurred.save('result/blur.jpg')
+image.save('result/portal-smoke.jpg')
