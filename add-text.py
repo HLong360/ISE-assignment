@@ -6,19 +6,19 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 # Open an Image
-img = Image.open('result/fusion_mertens.jpg')
+img = Image.open('result/smoke-scene.png')
 
 # Call draw Method to add 2D graphics in an image
 I1 = ImageDraw.Draw(img)
 
 # Custom font style and font size
-myFont = ImageFont.truetype('ITCBLKAD.TTF', 80)
+myFont = ImageFont.truetype('CURLZ___.TTF', 80)
 
 # Add Text to an image
-I1.text((30, 15), "Paris, France", font=myFont, fill =(240, 30, 30))
+I1.text((30, 15), "Machu Picchu, Peru", font=myFont, fill =(247, 111, 52))
 
 # Display edited image
 img.show()
 
 # Save the edited image
-img.save("result/paris.jpg")
+img.save("result/peru.jpg")

@@ -11,27 +11,10 @@ def blur(image):
     return blurred_image
 
 # image.paste(blurred_image, (1,819,1579,969))
-image = Image.open('result/bright1.jpg')
-inner = cropping(image, (300,190,373,264))
-# inner.save('result/inner.jpg')
 
-image = Image.open('result/bright2.jpg')
-mid = cropping(image, (181,56,492,366))
-# mid.save('result/mid.jpg')
+image = Image.open('img/Machu Picchu/machu-1.png')
+smoke = Image.open('result/brighten.png')
+image.paste(smoke,(0,177,1200,840), mask=smoke)
+image.save('result/smoke-scene.png')
 
-image = Image.open('result/bright3.jpg')
-image.paste(mid, (181,56,492,366))
-image.paste(inner, (300,190,373,264))
-# image.save('result/red.png')
-image.show()
-
-image = Image.open('result/red.png')
-light = Image.open('img/red-light.png')
-image.paste(light, (312,202,362,252))
-image.save('result/red-light-scene.jpg')
-cropped = cropping(image,(300,190,373,264))
-blurred = blur(cropped)
-image.paste(blurred, (300,190,373,264))
-image.save('result/red-light-scene-blur.jpg')
-image.show()
 
